@@ -1,0 +1,82 @@
+version: '2.2'
+services:
+  signal_accounts_database:
+    image:          postgres:11
+    container_name: postgres_accounts_database
+    restart:        always
+    environment:
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB:       accountdb
+      PGDATA:            /var/lib/postgresql/data/pgdata
+    ports:
+      - '5431:5432'
+    volumes:
+      - ./postgres_accounts_database:/var/lib/postgresql/data
+  signal_keys_database:
+    image:          postgres:11
+    container_name: signal_keys_database
+    restart:        always
+    environment:
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB:       keysdb
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./postgres_database:/var/lib/postgresql/data
+  signal_message_store:
+    image:          postgres:11
+    container_name: postgres_message_store
+    restart:        always
+    environment:
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB:       messagedb
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - '5433:5432'
+    volumes:
+      - ./postgres_message_store:/var/lib/postgresql/data
+  signal_abuse_database:
+    image:          postgres:11
+    container_name: postgres_abuse_database
+    restart:        always
+    environment:
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB:       abusedb
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - '5434:5432'
+    volumes:
+      - ./postgres_abuse_database:/var/lib/postgresql/data
+  redis_master:
+    image: redis:5
+    container_name: redis_master
+    restart:        always
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./redis_master:/data
+  redis_slave:
+    image: redis:5
+    container_name: redis_slave
+    restart:        always
+    command: redis-server --port 6380 --slaveof 127.0.0.1 6379 --slave-announce-ip 127.0.0.1
+    ports:
+      - '6380:6380'
+    volumes:
+      - ./redis_slave:/data
+  sentinel:
+    build: ./sentinel
+    container_name: redis_sentinel
+    restart:        always
+    ports:
+      - '26379:26379'
+    environment:
+      - SENTINEL_NAME=mysentinel
+      - HOST_IP=127.0.0.1
+    volumes:
+      - ./redis_slave:/data
