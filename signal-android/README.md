@@ -64,8 +64,8 @@ defaultConfig {
 ```
 
 5. update `UNIDENTIFIED_SENDER_TRUST_ROOT` (value is Public Key from when creating UnidentifiedDelivery of server’s config.yml)
-6. Download `google-service.json` from Firebase, put it inside `app/`.
-7. Update `app/src/main/res/values/firebase_messaging.xml` according to value from `google-service.json`*
+6. Download `google-services.json` from Firebase, put it inside `app/`.
+7. Update `app/src/main/res/values/firebase_messaging.xml` according to value from `google-services.json`
 8. Update `ATTACHMENT_DOWNLOAD_PATH` and `ATTACHMENT_UPLOAD_PATH` in `libsignal/service/src/main/java/org/whispersystems/signalservice/internal/push/PushServiceSocket.java` by deleting ‘attachments/‘ so attachment will be uploaded in root ( / ). If you don't want the attachments to be uploaded to root bucket, check the FAQ part of this guide.
 9. Sync your project then build.
 
