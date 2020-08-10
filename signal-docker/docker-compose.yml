@@ -64,7 +64,7 @@ services:
     image: redis:5
     container_name: redis_slave
     restart:        always
-    command: redis-server --port 6380 --slaveof 127.0.0.1 6379 --slave-announce-ip 127.0.0.1
+    command: redis-server --port 6380 --slaveof redis_master 6379
     ports:
       - '6380:6380'
     volumes:
