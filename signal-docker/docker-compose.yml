@@ -2,7 +2,7 @@ version: '2.2'
 services:
   signal_accounts_database:
     image:          postgres:11
-    container_name: postgres_accounts_database
+    container_name: accounts_database
     restart:        always
     environment:
       POSTGRES_USER:     postgres
@@ -15,7 +15,7 @@ services:
       - ./postgres_accounts_database:/var/lib/postgresql/data
   signal_keys_database:
     image:          postgres:11
-    container_name: signal_keys_database
+    container_name: keys_database
     restart:        always
     environment:
       POSTGRES_USER:     postgres
@@ -28,7 +28,7 @@ services:
       - ./postgres_database:/var/lib/postgresql/data
   signal_message_store:
     image:          postgres:11
-    container_name: postgres_message_store
+    container_name: message_store
     restart:        always
     environment:
       POSTGRES_USER:     postgres
@@ -41,7 +41,7 @@ services:
       - ./postgres_message_store:/var/lib/postgresql/data
   signal_abuse_database:
     image:          postgres:11
-    container_name: postgres_abuse_database
+    container_name: abuse_database
     restart:        always
     environment:
       POSTGRES_USER:     postgres
