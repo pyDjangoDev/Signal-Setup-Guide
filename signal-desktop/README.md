@@ -4,8 +4,14 @@ This guid is written by using Signal Desktop on branch Master version 1.30.0-bet
 ## Requirement
 * NVM 12.4.0
 
-## How To
-1. Install requirement
+## Installation Steps
+
+1. Clone the project source code:
+```
+git clone https://github.com/signalapp/Signal-Desktop.git && cd Signal-Desktop
+```
+
+2. Install requirement
 
 on MacOS, Install xcode
 ```
@@ -23,49 +29,49 @@ On Linux, Install python, gcc, g++, make
 sudo apt-get install python, gcc, g++, make
 ```
 
-2. Clone signal-desktop
+3. Clone signal-desktop
 
-3. Mount signal desktop directory
+4. Mount signal desktop directory
 ```
 cd Signal-Desktop
 ```
 
-4. Install yarn
+5. Install yarn
 ```
 npm install —global yarn
 ```
 
-5. Install & build with yarn
+6. Install & build with yarn
 ```
 yarn install —frozen-lockfile
 ```
 
-6. Generate final JS & CSS
+7. Generate final JS & CSS
 ```
 yarn grunt
 ```
 
-7. Generate full-set icon
+8. Generate full-set icon
 ```
 yarn icon-gen
 ```
 
-8. Build with webpack
+9. Build with webpack
 ```
 yarn build:webpack
 ```
 
-9. You can test with
+10. You can test with
 ```
 yarn test 
 ```
 
-10. Start the app
+11. Start the app
 ```
 yarn start
 ```
 
-11. To connect to own production server, `create local-development.json`, the value is the same as `production.json` but without `updateEnabled`.
+12. To connect to own production server, `create local-development.json`, the value is the same as `production.json` but without `updateEnabled`.
 ```
 {
   "serverUrl": "https://domain.com",
