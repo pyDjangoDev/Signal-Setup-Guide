@@ -19,7 +19,7 @@ xcode-select --install # Install Command Line Tools if you haven't already.
 sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools
 ```
 
-On Win7:
+On Windows:
 Install [NPM](https://nodejs.org/en/download)
 Install .Net 4.5.1 & Windows SDK 8.1 & Windows Build Tools:
 ```
@@ -28,7 +28,7 @@ npm install --global --production --add-python-to-path windows-build-tools
 
 On Linux, Install python, gcc, g++, make
 ```
-sudo apt-get install python, gcc, g++, make
+sudo apt install python  gcc  g++  make
 ```
 
 3. Clone signal-desktop
@@ -40,7 +40,7 @@ cd Signal-Desktop
 
 5. Install yarn
 ```
-npm install —global yarn
+sudo npm install -g yarn
 ```
 
 6. Install & build with yarn
