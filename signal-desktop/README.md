@@ -84,7 +84,7 @@ yarn start
 ```
 
 ## Using own Server
-1. Update `config/deafult.json`, set serverUrl & cdnUrl by using your Server URL & your CDN url, **don’t include trailing slash on serverUrl and cdnUrl**.
+1. Update `config/default.json`, set serverUrl & cdnUrl by using your Server URL & your CDN url, **don’t include trailing slash on serverUrl and cdnUrl**.
 
 2. Update `config/default.json`, set certificateAuthority using CA’s SSL Certificate.
 
