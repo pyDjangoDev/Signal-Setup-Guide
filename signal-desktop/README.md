@@ -115,9 +115,3 @@ certificateAuthority: "-----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----
 7. `yarn build`
 
 8. `yarn start`
-
-
-## FAQ
-Q: How could I get certificate authority?
-
-A: I called it the certificate of the certificate issuer. You can try browsing a https web using chrome, click on lock pad beside the URL address bar, then click on "Certificate (Valid)", you will see the top most & orange certificate, that is what you need, drag it to your desktop to save it.
