@@ -45,7 +45,7 @@ sudo npm install -g yarn
 
 6. Install & build with yarn
 ```
-yarn install —frozen-lockfile
+yarn add —frozen-lockfile
 ```
 
 7. Generate final JS & CSS
