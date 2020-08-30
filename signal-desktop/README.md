@@ -6,12 +6,7 @@ This guid is written by using Signal Desktop on branch Master version 1.30.0-bet
 
 ## Installation Steps
 
-1. Clone the project source code:
-```
-git clone https://github.com/signalapp/Signal-Desktop.git && cd Signal-Desktop
-```
-
-2. Install requirement
+1. Install requirement
 
 on MacOS, Install xcode
 ```
@@ -31,49 +26,47 @@ On Linux, Install python, gcc, g++, make
 sudo apt install python  gcc  g++  make
 ```
 
-3. Clone signal-desktop
-
-4. Mount signal desktop directory
+2. Clone the project source code:
 ```
-cd Signal-Desktop
+git clone https://github.com/signalapp/Signal-Desktop.git && cd Signal-Desktop
 ```
 
-5. Install yarn
+3. Install yarn
 ```
 sudo npm install -g yarn
 ```
 
-6. Install & build with yarn
+4. Install & build with yarn
 ```
 yarn add —frozen-lockfile
 ```
 
-7. Generate final JS & CSS
+5. Generate final JS & CSS
 ```
 yarn grunt
 ```
 
-8. Generate full-set icon
+6. Generate full-set icon
 ```
 yarn icon-gen
 ```
 
-9. Build with webpack
+7. Build with webpack
 ```
 yarn build:webpack
 ```
 
-10. You can test with
+8. You can test with
 ```
 yarn test 
 ```
 
-11. Start the app
+9. Start the app
 ```
 yarn start
 ```
 
-12. To connect to own production server, `create local-development.json`, the value is the same as `production.json` but without `updateEnabled`.
+10. To connect to own production server, `create local-development.json`, the value is the same as `production.json` but without `updateEnabled`.
 ```
 {
   "serverUrl": "https://domain.com",
@@ -83,7 +76,7 @@ yarn start
 }
 ```
 
-## Using own Server
+## Using self hosted Server
 1. Update `config/default.json`, set serverUrl & cdnUrl by using your Server URL & your CDN url, **don’t include trailing slash on serverUrl and cdnUrl**.
 
 2. Update `config/default.json`, set certificateAuthority using CA’s SSL Certificate.
