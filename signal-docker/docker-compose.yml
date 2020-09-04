@@ -26,9 +26,9 @@ services:
       - '5432:5432'
     volumes:
       - ./postgres_database:/var/lib/postgresql/data
-  signal_message_store:
+  signal_message_database:
     image:          postgres:11
-    container_name: message_store
+    container_name: message_database
     restart:        always
     environment:
       POSTGRES_USER:     postgres
@@ -38,7 +38,7 @@ services:
     ports:
       - '5433:5432'
     volumes:
-      - ./postgres_message_store:/var/lib/postgresql/data
+      - ./postgres_message_database:/var/lib/postgresql/data
   signal_abuse_database:
     image:          postgres:11
     container_name: abuse_database
