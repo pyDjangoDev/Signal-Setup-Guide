@@ -44,10 +44,9 @@ java -jar service/target/TextSecureServer-2.92.jar certificate --key <priv_key_f
 5.	Create databases ()
 6.	Migrate databases:
 ```
-java -jar service/target/TextSecureServer-2.92.jar accountdb migrate service/config/config.yml
-java -jar service/target/TextSecureServer-2.92.jar keysdb migrate service/config/config.yml
-java -jar service/target/TextSecureServer-2.92.jar messagedb migrate service/config/config.yml
-java -jar service/target/TextSecureServer-2.92.jar abusedb migrate service/config/config.yml
+java -jar service/target/TextSecureServer-3.21.jar abusedb migrate service/config/config.yml
+java -jar service/target/TextSecureServer-3.21.jar accountdb migrate service/config/config.yml
+java -jar service/target/TextSecureServer-3.21.jar messagedb migrate service/config/config.yml
 ```
 
 6.	Run the server

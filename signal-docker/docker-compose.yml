@@ -1,57 +1,45 @@
 version: '2.2'
 services:
-  signal_accounts_database:
+  accounts_db:
     image:          postgres:11
-    container_name: accounts_database
+    container_name: accounts_db
     restart:        always
     environment:
       POSTGRES_USER:     postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB:       accountdb
+      POSTGRES_DB:       accounts_db
       PGDATA:            /var/lib/postgresql/data/pgdata
     ports:
       - '5431:5432'
     volumes:
-      - ./postgres_accounts_database:/var/lib/postgresql/data
-  signal_keys_database:
+      - ./postgres/accounts_db:/var/lib/postgresql/data
+  message_db:
     image:          postgres:11
-    container_name: keys_database
+    container_name: message_db
     restart:        always
     environment:
       POSTGRES_USER:     postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB:       keysdb
+      POSTGRES_DB:       message_db
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - '5432:5432'
     volumes:
-      - ./postgres_database:/var/lib/postgresql/data
-  signal_message_database:
+      - ./postgres/message_db:/var/lib/postgresql/data
+  abuse_db:
     image:          postgres:11
-    container_name: message_database
+    container_name: abuse_db
     restart:        always
     environment:
       POSTGRES_USER:     postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB:       messagedb
+      POSTGRES_DB:       abuse_db
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - '5433:5432'
     volumes:
-      - ./postgres_message_database:/var/lib/postgresql/data
-  signal_abuse_database:
-    image:          postgres:11
-    container_name: abuse_database
-    restart:        always
-    environment:
-      POSTGRES_USER:     postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB:       abusedb
-      PGDATA: /var/lib/postgresql/data/pgdata
-    ports:
-      - '5434:5432'
-    volumes:
-      - ./postgres_abuse_database:/var/lib/postgresql/data
+      - ./postgres/abuse_db:/var/lib/postgresql/data
+
   redis_master:
     image: redis:5
     container_name: redis_master
@@ -59,7 +47,7 @@ services:
     ports:
       - '6379:6379'
     volumes:
-      - ./redis_master:/data
+      - ./redis/redis_master:/data
   redis_slave:
     image: redis:5
     container_name: redis_slave
@@ -68,7 +56,7 @@ services:
     ports:
       - '6380:6380'
     volumes:
-      - ./redis_slave:/data
+      - ./redis/redis_slave:/data
   sentinel:
     build: ./sentinel
     container_name: redis_sentinel
@@ -79,4 +67,4 @@ services:
       - SENTINEL_NAME=mysentinel
       - HOST_IP=127.0.0.1
     volumes:
-      - ./redis_slave:/data
+      - ./redis/redis_slave:/data
