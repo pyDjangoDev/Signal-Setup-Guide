@@ -18,7 +18,7 @@ Signal use AWS for attachment and CDS queue. However you can skip this step if y
 
 2. Click on `Create Bucket`.
 
-3. Name your `Bucket name` and select your `Region`, then select `Next`.
+3. Name your `Bucket name` and select *us-east-1* as your `Region`, then select `Next`.
 
 4. On `Configure options` tab, select `Next`.
 
