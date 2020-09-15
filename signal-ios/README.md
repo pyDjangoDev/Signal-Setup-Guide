@@ -15,21 +15,6 @@ Clone the repo to a working directory:
 git clone --recurse-submodules https://github.com/signalapp/Signal-iOS
 ```
 
-Since we make use of sub-modules, you must use `git clone`, rather than
-downloading a prepared zip file from Github.
-
-We recommend you fork the repo on GitHub, then clone your fork:
-
-```
-git clone --recurse-submodules https://github.com/<USERNAME>/Signal-iOS.git
-```
-
-You can then add the Signal repo to sync with upstream changes:
-
-```
-git remote add upstream https://github.com/signalapp/Signal-iOS
-```
-
 2. Dependencies
 
 To build and configure the libraries Signal uses, just run:
@@ -37,12 +22,6 @@ To build and configure the libraries Signal uses, just run:
 ```
 make dependencies
 ```
-
-### Building RingRTC
-
-A prebuilt version of WebRTC.framework and the libringrtc static library reside
-in a sub-module and should be installed by the above steps.  However, if you'd 
-like to build it from source, see: https://github.com/signalapp/ringrtc
 
 3. Xcode
 
