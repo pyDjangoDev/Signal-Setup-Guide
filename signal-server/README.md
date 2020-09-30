@@ -32,12 +32,12 @@ mvn clean install -DskipTests
 
 You will get key pair using this command (keep the keypair, you will need it for Android and for the next step)
 ```
-java -jar service/target/TextSecureServer-2.92.jar certificate -ca
+java -jar service/target/TextSecureServer-3.21.jar certificate -ca
 ```
 
 Use the Private key to generate certificate (id can be random, i use 1234)
 ```
-java -jar service/target/TextSecureServer-2.92.jar certificate --key <priv_key_from_step_above> --id 1234
+java -jar service/target/TextSecureServer-3.21.jar certificate --key <priv_key_from_step_above> --id 1234
 ```
 
 4.	Run **postgres**, **redis**, **coturn** (I suggest you use [signal-docker](../signal-docker))
@@ -51,12 +51,12 @@ java -jar service/target/TextSecureServer-3.21.jar messagedb migrate service/con
 
 6.	Run the server
 ```
-java -jar service/target/TextSecureServer-2.92.jar server service/config/config.yml
+java -jar service/target/TextSecureServer-3.21.jar server service/config/config.yml
 ```
 
 7. To run the server as daemon, use nohup
 ```
-nohup java -jar service/target/TextSecureServer-2.92.jar server service/config/config.yml &>/dev/null &
+nohup java -jar service/target/TextSecureServer-3.21.jar server service/config/config.yml &>/dev/null &
 ```
 
 ## Nginx Reverse Proxy
