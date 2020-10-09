@@ -11,7 +11,6 @@ This guide is a community collaboration effort to setup on-premise (self-hosted)
 * **Firebase** (For push notifications)
 
 ## Content
-What's proven works
 * [Server dependencies: PostgreSQL & Redis](https://github.com/aqnouch/signal-docker-dependencies)
 * [Signal Server](../master/signal-server)
 * [Signal Android](../master/signal-android)
