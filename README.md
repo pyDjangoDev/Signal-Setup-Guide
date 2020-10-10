@@ -1,4 +1,4 @@
-# On-Premise Signal Setup Guide
+# Signal Setup Guide
 
 This guide is a community collaboration effort to setup on-premise (self-hosted) Signal Server.
 
