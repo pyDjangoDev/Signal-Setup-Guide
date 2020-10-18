@@ -1,5 +1,5 @@
 # Signal iOS
-This guide is written using Signal-iOS version 3.11.0.24
+This guide is written using Signal-iOS version 3.19.0
 
 ## Requirement
 
