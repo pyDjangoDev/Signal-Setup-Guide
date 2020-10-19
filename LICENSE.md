@@ -1,6 +1,6 @@
 MIT License
 
-Copyright for portions of project Signal-Setup-Guide are held by [Made Indra, 2020] (https://github.com/madeindra/setup-guide) as part of project Setup Guide for Signal. All other copyright for this project are held by [AQNOUCH Mohammed, 2020].
+Copyright for portions of project Signal-Setup-Guide are held by [Made Indra, 2020](https://github.com/madeindra/setup-guide) as part of project Setup Guide for Signal. All other copyright for this project are held by [AQNOUCH Mohammed, 2020].
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
