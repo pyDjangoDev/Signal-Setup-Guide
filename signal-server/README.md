@@ -69,7 +69,7 @@ sudo apt install nginx
 2. generate a self signed certificate(change **domain.com** to your own domaine)
 
 ```
-openssl genrsa -out /etc/nginx/cert.key 2048
+sudo openssl genrsa -out /etc/nginx/cert.key 2048
 ```
 
 Create the config file configuration.conf:
@@ -84,7 +84,7 @@ subjectAltName=DNS:domain.com
 And the certificate:
 
 ```
-openssl req -new -x509 -key /etc/nginx/cert.key -out /etc/nginx/cert.crt -days 3650 -subj /CN=domain.com -extensions SAN -config 'configuration.conf'
+sudo openssl req -new -x509 -key /etc/nginx/cert.key -out /etc/nginx/cert.crt -days 3650 -subj /CN=domain.com -extensions SAN -config 'configuration.conf'
 ```
 
 3. Allow Nginx to be accessed from outside using Firewall.
