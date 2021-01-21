@@ -26,7 +26,7 @@ zipStorePath=wrapper/dists
 ```
 
 3. Install the `21.0.6113669` NDK version [link](https://developer.android.com/studio/projects/install-ndk)
-4. Use 'Keystore Explorer’, edit `whisper.store` files (the password is "whisper" without quote), insert your all your server certificates there. 
+4. Use 'Keystore Explorer’, edit `whisper.store` files (the password is "whisper" without quote), insert your all your server certificates there (pem format). 
 5. Update URL with own server in `app/build.gradle` (be sure to use https and don't include trailing slash). If you are having a hard time finding your `Cloudfront domain`, you can find it in <a href="https://console.aws.amazon.com/cloudfront/">CloudFront console</a> formated as `random-id.cloudfront.net`.
 ```
 ...
