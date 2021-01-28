@@ -45,3 +45,14 @@ If you wish to test the Documents API, the iCloud capability will need to
 be on with the iCloud Documents option selected.
 
 Build and Run and you are ready to go!
+
+## Push Notifications
+In order to enable the push notifications you must generate a push certificate/key(Voip type), and convert them using this commands:
+
+```
+openssl pkcs12 -in certificate.p12 -nokeys -out certificate.cert.pem -nodes
+
+openssl pkcs12 -in certificate.p12 -nocerts -out certificate.key.pem -nodes
+openssl rsa -in certificate.key.pem -out certificate.key.pem -text
+```
+
