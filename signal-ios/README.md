@@ -50,9 +50,9 @@ Build and Run and you are ready to go!
 In order to enable the push notifications you must generate a push certificate/key(Voip type), and convert them using this commands:
 
 ```
-openssl pkcs12 -in certificate.p12 -nokeys -out certificate.cert.pem -nodes
+openssl pkcs12 -in certificate.p12 -nokeys -out cert.pem -nodes
 
 openssl pkcs12 -in certificate.p12 -nocerts -out certificate.key.pem -nodes
-openssl rsa -in certificate.key.pem -out certificate.key.pem -text
+openssl rsa -in certificate.key.pem -out key.pem -text
 ```
 
