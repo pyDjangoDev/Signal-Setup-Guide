@@ -1,5 +1,5 @@
 # Signal Android
-This guide is written using Signal-Android version 4.74.1
+This guide is written using Signal-Android version 5.3.12
 
 ## Requirement
 * Android Studio 4.0
