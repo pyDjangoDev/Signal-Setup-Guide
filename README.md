@@ -5,6 +5,7 @@ This guide is a community collaboration effort to setup on-premise (self-hosted)
 *Signal™ is a trademark of Quiet Riddle Ventures LLC. This projects is not affliated with Signal.org, Signal Messenger LLC, nor Signal Foundation.*
 
 ## Requirements
+* **Ubuntu Server** (20.04 LTS)
 * **Twilio** (For SMS OTP)
 * **Amazon S3** (For Avatar and Attachments., can be subtituted with [MinIO](../master/signal-minio) )
 * **Amazon SQS** (For CDS Queue. can be subtituted with LocalStack)
