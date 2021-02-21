@@ -15,7 +15,7 @@ This guide is a community collaboration effort to setup on-premise (v3.21) Signa
 ## Content
 * Backend:
     * [Server dependencies](https://github.com/aqnouch/signal-docker-dependencies)
-    * [Signal Service](../master/signal-server)
+    * [Service](../master/signal-server)
     * Storage
     * CDN
     * CDN2
