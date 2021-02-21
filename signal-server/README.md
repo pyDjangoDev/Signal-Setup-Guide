@@ -11,7 +11,7 @@
 * Twilio
 * Amazon S3
 
-## Installation Steps
+## Building Steps
 
 1. First clone the project source code:
 
