@@ -11,7 +11,7 @@ This guide is a community collaboration effort to setup on-premise (v3.21) Signa
 * **Amazon SQS** (For CDS Queue)
 * **Firebase** (For Android push notifications)
 * **APN** (For iOS push notifications)
-* 
+
 ## Content
 * Backend:
     * [Server dependencies](https://github.com/aqnouch/signal-docker-dependencies)
