@@ -1,6 +1,6 @@
 # Signal Server Setup Guide
 
-This guide is a community collaboration effort to setup on-premise (self-hosted) Signal Server.
+This guide is a community collaboration effort to setup on-premise (v3.21) Signal Server.
 
 *Signal™ is a trademark of Quiet Riddle Ventures LLC. This projects is not affliated with Signal.org, Signal Messenger LLC, nor Signal Foundation.*
 
