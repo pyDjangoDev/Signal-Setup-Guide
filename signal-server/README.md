@@ -1,4 +1,4 @@
-# Setup Guide: Signal Server
+# Signal Server Setup Guide: Service
 
 *This guide is written by using Signal **v3.21**.*
 
@@ -7,10 +7,9 @@
 * Serveur Ubuntu 20.04
 * Java SE 14 
 * Domaine name
-* Google Recaptcha
-* Firebase Cloud Messaging (It used to be GCM)
+* Firebase Cloud Messaging
 * Twilio
-* AWS
+* Amazon S3
 
 ## Installation Steps
 
