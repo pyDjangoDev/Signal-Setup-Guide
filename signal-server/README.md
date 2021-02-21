@@ -105,9 +105,6 @@ sudo nginx -s reload
 ```
 
 ## FAQ
-Q: How do I get Recapthca?
-
-A: You register for [Google Recaptcha v3](https://www.google.com/recaptcha/intro/v3.html), put your server's domain there.
 
 Q: How do I get GCM?
 
@@ -133,7 +130,3 @@ environment.lifecycle().manage(messagesCache);
 
 ...
 ```
-
-Q: I got an error from updating profile name / avatar.
-
-A: Some error presumebly caused by constant change in client or server, starting fresh by reseting database & storage usually stopped this. Some people reported that modifying nginx configuration by adding `$uri` to the end of `proxy_pass`, but unfortunately I can't reproduce the desired result.
