@@ -7,14 +7,13 @@ This guide is a community collaboration effort to setup on-premise (**v3.21**) S
 ## Requirements
 * **Ubuntu Server** (20.04 LTS)
 * **Twilio** (For SMS OTP)
-* **Amazon S3** (For Avatar and Attachments)
 * **Amazon SQS** (For CDS Queue)
 * **Firebase** (For Android push notifications)
 * **APN** (For iOS push notifications)
 
 ## Content
 * Backend:
-    * [Server dependencies](https://github.com/aqnouch/signal-docker-dependencies)
+    * [Server dependencies](../master/signal-docker-dependencies)
     * [Service](../master/signal-server)
     * Storage
     * CDN
