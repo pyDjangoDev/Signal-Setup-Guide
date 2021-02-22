@@ -13,7 +13,7 @@ This guide is a community collaboration effort to setup on-premise (**v3.21**) S
 
 ## Content
 * Backend:
-    * [Server dependencies](../master/signal-docker-dependencies)
+    * [Server dependencies](https://github.com/aqnouch/signal-docker-dependencies)
     * [Service](../master/signal-server)
     * Storage
     * CDN
