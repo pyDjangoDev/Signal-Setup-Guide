@@ -27,6 +27,7 @@ This guide is a community collaboration effort to setup on-premise (**v3.21**) S
     * [Signal Android](../master/signal-android)
     * [Signal iOS](../master/signal-ios)
     * [Signal Desktop](../master/signal-desktop)
+    * Signal-cli
 
 ## Cotributing
 You are welcome to contribute on this guide. If you have any questions please write an issues.
