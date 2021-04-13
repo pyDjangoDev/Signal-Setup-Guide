@@ -4,56 +4,69 @@
 
 ## Requirement
 
-* Serveur Ubuntu 20.04
+* Serveur Ubuntu 18.04 or 20.04
 * Java SE 14 
 * Domaine name
 * Firebase Cloud Messaging
 * Twilio
-* Amazon S3
+* AWS(EC2, S3, CloudFront, SQS)
 
 ## Building Steps
-
-1. First clone the project source code:
-
+1. First Clone service-dependencies.
+```
+git clone https://github.com/aqnouch/signal-docker-dependencies.git
+cd signal-docker-dependencies
+docker-compose build
+docker-comose up -d 
+```
+2. Clone the project source code:
 ```
 git clone https://github.com/signalapp/Signal-Server.git && cd Signal-Server
+git checkout 3432529f9c018d75774ce89f3207b18051c26fe7
 ```
-
-2. Create your own `config.yml`, put it inside `signal-server/service/config/`. You can take a look at the [example here](../signal-server/example-signal.yml).
-3. Remove `@Length(min = 72,max= 72)`  from  `service/src/main/java/org/whispersystems/textsecuregcm/controllers/ProfileController.java`
-4. Build the server
-
+3. Update zkgroup dependency in service/pom.xml from 0.6.0 to 0.7.0.
+```
+<dependency>
+    <groupId>org.signal</groupId>
+    <artifactId>zkgroup-java</artifactId>
+    <version>0.7.0</version>
+</dependency>
+```
+4. Create your own `config.yml`, put it inside `signal-server/service/config/`. You can take a look at the [example here](../signal-server/example-signal.yml).
+5. Build the server
 ```
 mvn clean install -DskipTests
 ```
-
-3. Generate value for **UnidentifiedDelivery**
+6. Generate zkparams value for the config and replace 'zkConfig' in config.yml with the results from the below command
+```
+java -jar service/target/TextSecureServer-3.21.jar zkparams
+```
+7. Generate value for **UnidentifiedDelivery**
 
 You will get key pair using this command (keep the keypair, you will need it for Android and for the next step)
 ```
 java -jar service/target/TextSecureServer-3.21.jar certificate -ca
 ```
-
 Use the Private key to generate certificate (id can be random, i use 1234)
 ```
 java -jar service/target/TextSecureServer-3.21.jar certificate --key <priv_key_from_step_above> --id 1234
 ```
+Replace unidentifiedDelivery in config.yml with the certificate and privatekey from the above command. 
 
-4.	Run **postgres**, **redis**, **coturn** (I suggest you use [signal-docker](../signal-docker))
-5.	Create databases ()
-6.	Migrate databases:
+7.	Run the coTurn server for Audio/Video call.
+8.	Migrate databases:
 ```
 java -jar service/target/TextSecureServer-3.21.jar abusedb migrate service/config/config.yml
 java -jar service/target/TextSecureServer-3.21.jar accountdb migrate service/config/config.yml
 java -jar service/target/TextSecureServer-3.21.jar messagedb migrate service/config/config.yml
 ```
 
-6.	Run the server
+9.	Run the server
 ```
 java -jar service/target/TextSecureServer-3.21.jar server service/config/config.yml
 ```
 
-7. To run the server as daemon, use nohup
+10. To run the server as daemon, use nohup
 ```
 nohup java -jar service/target/TextSecureServer-3.21.jar server service/config/config.yml &>/dev/null &
 ```
@@ -77,7 +90,7 @@ Create the config file configuration.conf:
 [req]
 distinguished_name=req
 [SAN]
-subjectAltName=DNS:domain.com
+subjectAltName=DNS:your-domain or ec2-domain
 ```
 
 And the certificate:
